@@ -1,0 +1,61 @@
+{
+  "name": "dsh-usage-board",
+  "version": "0.3.1",
+  "description": "DSH usage overlay: auto-detects model providers and subscription logins for usage meters.",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/http.js && node --check lib/detect.js && node --check lib/provider-runner.js && node --check lib/security.js",
+    "test": "node test/run-all.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "grok",
+    "supergrok",
+    "opencode",
+    "deepseek",
+    "quota",
+    "usage",
+    "gemini",
+    "claude"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuediner-source/dsh-plugin-suite.git",
+    "directory": "packages/dsh-usage-board"
+  },
+  "bugs": {
+    "url": "https://github.com/xuediner-source/dsh-plugin-suite/issues"
+  },
+  "homepage": "https://github.com/xuediner-source/dsh-plugin-suite/tree/main/packages/dsh-usage-board#readme",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-credentials": "^0.2.0-rc.2"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}

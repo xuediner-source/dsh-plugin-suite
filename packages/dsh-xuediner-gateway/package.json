@@ -1,0 +1,97 @@
+{
+  "name": "dsh-xuediner-gateway",
+  "version": "0.2.1",
+  "description": "DSH plugin: unified xuedinerAPI provider — Huawei CodeArts, Tencent WorkBuddy/CodeBuddy pool (via bundled gateway), ZCode, Qoder Codex and more.",
+  "type": "module",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "client",
+    "scripts",
+    "gateway",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "slots"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && node scripts/copy-client.mjs",
+    "prepare": "npm run build",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "pool": "node scripts/pool-report.mjs",
+    "test": "node test/run-all.mjs"
+  },
+  "peerDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-llm": "^0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.0",
+    "@deepseek-ai/dsh-credentials": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-commands": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-host-webserver": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-attachment": "^0.2.0-rc.2"
+  },
+  "devDependencies": {
+    "@deepseek-ai/cordis": "^4.0.2",
+    "@deepseek-ai/dsh-llm": "^0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.0",
+    "@types/node": "^22.0.0",
+    "typescript": "^5.6.0"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuediner-source/dsh-plugin-suite.git",
+    "directory": "packages/dsh-xuediner-gateway"
+  },
+  "bugs": {
+    "url": "https://github.com/xuediner-source/dsh-plugin-suite/issues"
+  },
+  "homepage": "https://github.com/xuediner-source/dsh-plugin-suite/tree/main/packages/dsh-xuediner-gateway#readme",
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "codearts",
+    "workbuddy",
+    "codebuddy",
+    "zcode",
+    "qoder",
+    "codex",
+    "gateway"
+  ],
+  "dependencies": {
+    "jose": "^6.2.12"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-credentials": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-commands": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-host-webserver": {
+      "optional": true
+    },
+    "@deepseek-ai/dsh-attachment": {
+      "optional": true
+    }
+  }
+}

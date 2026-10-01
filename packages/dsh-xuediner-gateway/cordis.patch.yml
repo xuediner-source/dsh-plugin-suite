@@ -1,0 +1,7 @@
+# dsh-xuediner-gateway layer: insert the plugin row into the empty profile root.
+- insert:
+    - id: xuediner-gateway
+      name: 'dsh-xuediner-gateway'
+      config:
+        baseURL: 'http://127.0.0.1:7863/v1'
+        apiKeyEnv: XUEDINER_API_KEY

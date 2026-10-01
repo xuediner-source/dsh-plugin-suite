@@ -1,0 +1,47 @@
+# DSH / Gemini / GPT / Grok / Claude 长连接分流
+# 适用：Clash Verge / Clash Meta / Mihomo
+# 用法：把 rules 整段贴到配置最前面（必须在 GEOIP,CN 之前）
+#
+# 当前这台机器占用 127.0.0.1:7890 的是 iKuuuVPN（iKuuuVPNCore.exe），
+# 不是 Clash Verge。Clash Verge 导入后要自己开系统代理/TUN。
+# iKuuu 若支持自定义规则，把 DOMAIN 行贴进去即可。
+
+proxies: []
+
+proxy-groups:
+  - name: AI
+    type: select
+    proxies:
+      - PROXY
+      - DIRECT
+
+rules:
+  # Google Antigravity / Gemini
+  - DOMAIN-SUFFIX,googleapis.com,AI
+  - DOMAIN-SUFFIX,google.com,AI
+  - DOMAIN-SUFFIX,googleusercontent.com,AI
+  - DOMAIN,daily-cloudcode-pa.googleapis.com,AI
+  - DOMAIN,cloudcode-pa.googleapis.com,AI
+  - DOMAIN,daily-cloudcode-pa.sandbox.googleapis.com,AI
+  # ChatGPT / Codex
+  - DOMAIN-SUFFIX,openai.com,AI
+  - DOMAIN-SUFFIX,chatgpt.com,AI
+  - DOMAIN-SUFFIX,oaistatic.com,AI
+  - DOMAIN-SUFFIX,oaiusercontent.com,AI
+  - DOMAIN-SUFFIX,auth0.com,AI
+  # Grok / xAI
+  - DOMAIN-SUFFIX,x.ai,AI
+  - DOMAIN-SUFFIX,grok.com,AI
+  - DOMAIN-SUFFIX,twitter.com,AI
+  - DOMAIN-SUFFIX,x.com,AI
+  # Claude
+  - DOMAIN-SUFFIX,anthropic.com,AI
+  - DOMAIN-SUFFIX,claude.ai,AI
+  # Qwen / OpenRouter
+  - DOMAIN-SUFFIX,qwen.ai,AI
+  - DOMAIN-SUFFIX,alicdn.com,AI
+  - DOMAIN-SUFFIX,openrouter.ai,AI
+  # DSH 进程走代理，避免系统分流把长 SSE 掐掉
+  - PROCESS-NAME,DSH.exe,AI
+  - PROCESS-NAME,dsh.exe,AI
+  - PROCESS-NAME,DeepSeek Harness.exe,AI

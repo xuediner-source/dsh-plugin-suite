@@ -1,0 +1,67 @@
+{
+  "name": "dsh-subs-hub",
+  "version": "0.1.3",
+  "description": "DSH subscription hub: Gemini / GPT / Grok / Claude / Qwen / OpenRouter without API keys.",
+  "type": "module",
+  "main": "lib/index.js",
+  "files": [
+    "lib",
+    "docs",
+    "cordis.patch.yml",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": "./lib/index.js",
+    "./client": "./lib/client.js",
+    "./package.json": "./package.json"
+  },
+  "scripts": {
+    "check": "node --check lib/index.js && node --check lib/client.js && node --check lib/auth/provider-registry.js",
+    "test": "node test/run-all.mjs"
+  },
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-runtime",
+        "@deepseek-ai/dsh-client-connection",
+        "@deepseek-ai/dsh-client-ui-settings"
+      ]
+    }
+  },
+  "keywords": [
+    "dsh",
+    "gemini",
+    "gpt",
+    "grok",
+    "claude",
+    "qwen",
+    "openrouter",
+    "oauth",
+    "subscription"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xuediner-source/dsh-plugin-suite.git",
+    "directory": "packages/dsh-subs-hub"
+  },
+  "bugs": {
+    "url": "https://github.com/xuediner-source/dsh-plugin-suite/issues"
+  },
+  "homepage": "https://github.com/xuediner-source/dsh-plugin-suite/tree/main/packages/dsh-subs-hub#readme",
+  "peerDependencies": {
+    "@deepseek-ai/dsh-attachment": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-home-paths": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-llm": "^0.2.0-rc.2",
+    "@deepseek-ai/dsh-tools": "^0.2.0-rc.2",
+    "@deepseek-ai/schemastery": "^3.18.4"
+  },
+  "engines": {
+    "node": "^22.19.0 || >=24.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+# Optional observer; native DSH owns compaction. Explicit mode: correct enables
+# narrowly classified overflow/window corrections. No preset files are changed.
+- insert:
+    - id: dsh-autocompact
+      name: 'dsh-autocompact'
+      config:
+        mode: observe

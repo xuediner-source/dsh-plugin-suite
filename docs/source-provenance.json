@@ -1,0 +1,59 @@
+{
+  "harness": {
+    "repository": "https://github.com/deepseek-ai/deepseek-harness",
+    "commit": "639ed015397290b3745d163aafe02ffee4aa3f84",
+    "version": "0.2.0-rc.2"
+  },
+  "plugins": [
+    {
+      "package": "dsh-antigravity-boost",
+      "repository": "https://github.com/xuediner-source/dsh-antigravity-boost",
+      "commit": "5583254b0c96b1decbe06000cbe7a700e5a7aa4b",
+      "files": 12,
+      "suiteSourceTag": "source/dsh-antigravity-boost",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/5583254b0c96b1decbe06000cbe7a700e5a7aa4b"
+    },
+    {
+      "package": "dsh-autocompact",
+      "repository": "https://github.com/xuediner-source/dsh-autocompact",
+      "commit": "5e81c38bb91212f9240cc8e50fb3b7213026504d",
+      "files": 10,
+      "suiteSourceTag": "source/dsh-autocompact",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/5e81c38bb91212f9240cc8e50fb3b7213026504d"
+    },
+    {
+      "package": "dsh-grok-memory",
+      "repository": "https://github.com/xuediner-source/dsh-grok-memory",
+      "commit": "d5fa8b8fe3c6ca879da0f6991359f9f6c91e5f63",
+      "files": 17,
+      "suiteSourceTag": "source/dsh-grok-memory",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/d5fa8b8fe3c6ca879da0f6991359f9f6c91e5f63"
+    },
+    {
+      "package": "dsh-subs-hub",
+      "repository": "https://github.com/xuediner-source/dsh-subs-hub",
+      "commit": "f49e55e22b5c50c11a14dc6d9d07c44de7caecbe",
+      "files": 16,
+      "suiteSourceTag": "source/dsh-subs-hub",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/f49e55e22b5c50c11a14dc6d9d07c44de7caecbe"
+    },
+    {
+      "package": "dsh-usage-board",
+      "repository": "https://github.com/xuediner-source/dsh-usage-board",
+      "commit": "f8b4de8cee660f46a3fa009a1d06cb8931626da2",
+      "files": 28,
+      "suiteSourceTag": "source/dsh-usage-board",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/f8b4de8cee660f46a3fa009a1d06cb8931626da2"
+    },
+    {
+      "package": "dsh-xuediner-gateway",
+      "repository": "https://github.com/xuediner-source/dsh-xuediner-gateway",
+      "commit": "3af4a4ff0ea26b0caacc36d14ce005211072d8ae",
+      "files": 135,
+      "suiteSourceTag": "source/dsh-xuediner-gateway",
+      "suiteSourceUrl": "https://github.com/xuediner-source/dsh-plugin-suite/tree/3af4a4ff0ea26b0caacc36d14ce005211072d8ae"
+    }
+  ],
+  "auditedAt": "2026-10-02",
+  "sourceRepositoryDisposition": "Retired after verified suite publication; audited source commits remain reachable through source/<package> tags in the suite."
+}

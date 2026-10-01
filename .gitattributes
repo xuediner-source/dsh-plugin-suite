@@ -1,0 +1,5 @@
+* text=auto
+*.png binary
+*.tgz binary
+packages/dsh-autocompact/lib/** linguist-generated=true
+packages/dsh-xuediner-gateway/lib/** linguist-generated=true

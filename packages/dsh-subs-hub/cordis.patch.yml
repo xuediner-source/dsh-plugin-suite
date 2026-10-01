@@ -1,0 +1,4 @@
+# 订阅中心 bundle 自激活补丁
+- insert:
+    - id: dsh-subs-hub
+      name: dsh-subs-hub
