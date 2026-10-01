@@ -14,7 +14,16 @@ for (const name of PACKAGES) {
   const dir = path.join(ROOT, 'packages', name);
   const result = spawnSync(npm, ['pack', '--ignore-scripts', '--json', '--pack-destination', destination], { cwd: dir, encoding: 'utf8', maxBuffer: 16_777_216, shell: process.platform === 'win32' });
   assert.equal(result.status, 0, `${name}: npm pack failed\n${result.stderr}`);
-  const packed = JSON.parse(result.stdout)[0];
+  // npm 10 can print prepare output ahead of --json even with --ignore-scripts.
+  // Parse the trailing metadata document, without treating build logs as JSON.
+  let packed;
+  for (let offset = result.stdout.indexOf('['); offset >= 0; offset = result.stdout.indexOf('[', offset + 1)) {
+    try {
+      const rows = JSON.parse(result.stdout.slice(offset));
+      if (Array.isArray(rows) && rows.length === 1 && typeof rows[0]?.filename === 'string' && Array.isArray(rows[0]?.files)) { packed = rows[0]; break; }
+    } catch { /* lifecycle log prefix, not the metadata document */ }
+  }
+  assert(packed, `${name}: npm did not return valid archive metadata`);
   const pkg = JSON.parse(fs.readFileSync(path.join(dir, 'package.json')));
   const paths = packed.files.map(file => file.path);
   assert(paths.includes('LICENSE') && paths.includes('package.json') && paths.includes('lib/index.js') && paths.includes('cordis.patch.yml'), `${name}: incomplete installable package`);

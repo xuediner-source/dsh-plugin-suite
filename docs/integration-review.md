@@ -30,3 +30,5 @@
 ## 本轮最终结果
 
 Node 24.20.0 本机统一回归通过：Boost 50、Autocompact 3、Memory 76、Subscriptions Hub 65、Usage Board 40、Gateway stream 6、真实 native SettingsForms 1，合计 **241 项 node:test 用例**。此外号池真实本机 HTTP、结构/导出/凭据检查、TypeScript、Go 全包回归和 Go vet 均通过。GitHub CI 同时覆盖 Node 22.19.0 与 24.20.0；线上运行结果以仓库 Checks 为准。测试数不包含供应商实测或模型性能测量。
+
+Node 22 的首次 CI 已通过全部功能测试，但 npm 10 在 `pack --json` 前输出了 prepare 构建日志；打包器现单独解析末尾清单文档，避免版本差异破坏归档验证。
