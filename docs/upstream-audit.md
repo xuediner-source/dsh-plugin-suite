@@ -1,6 +1,6 @@
 # DSH upstream feature audit
 
-This audit compares the six source repos recorded in [source-provenance.json](source-provenance.json) with DeepSeek Harness `0.2.0-rc.2` at [`639ed015`](https://github.com/deepseek-ai/deepseek-harness/commit/639ed015397290b3745d163aafe02ffee4aa3f84). Source links below pin each plugin to its audited commit, preserved in this suite through `source/<package>` tags. Original repository URLs in the provenance record are historical; the source repositories are retired after verified suite publication. “Partial” means DSH has a neighboring capability; it does not make the plugin redundant.
+This audit compares the six source repos recorded in [source-provenance.json](source-provenance.json) with DeepSeek Harness `0.2.0-rc.2` at [`639ed015`](https://github.com/deepseek-ai/deepseek-harness/commit/639ed015397290b3745d163aafe02ffee4aa3f84). Source links below pin each plugin to its audited commit, preserved in this suite through `source/<package>` tags. Original repository URLs in the provenance record are historical; the six source repositories were deleted at the owner’s request on 2026-10-02 after verified suite publication. “Partial” means DSH has a neighboring capability; it does not make the plugin redundant.
 
 | Plugin and source evidence | DSH native baseline | Classification and default recommendation |
 |---|---|---|

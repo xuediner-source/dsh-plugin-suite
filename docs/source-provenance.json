@@ -55,5 +55,6 @@
     }
   ],
   "auditedAt": "2026-10-02",
-  "sourceRepositoryDisposition": "Retired after verified suite publication; audited source commits remain reachable through source/<package> tags in the suite."
+  "sourceRepositoryDisposition": "The six original repositories were deleted at the owner’s request after verified suite publication; audited source commits remain reachable through source/<package> tags in the suite.",
+  "sourceRepositoriesDeletedAt": "2026-10-02"
 }

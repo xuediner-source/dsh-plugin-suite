@@ -25,7 +25,7 @@
 
 `npm run build`、`npm run typecheck`、`npm run check`、`npm test`、`npm run pack:plugins`。Go 网关另包含全包 `go test ./...` 和 `go vet ./...`。安装包检查实际导出、入口、patch、许可证、文件列表和凭据模式，并生成 SHA-256 清单。测试和打包失败时不发布。
 
-旧六个仓库在整合发布验证后删除。来源历史提交保存在整合仓库 `source/<package>` 标签中，审查链接使用整合仓库内的同一 source SHA；来源清单仍记录原 URL 作为历史来源事实。当前独立包只从整合仓库 Release 或构建后的 package 目录安装。
+旧六个仓库已按所有者要求于 2026-10-02 在整合发布验证通过后删除。来源历史提交保存在整合仓库 `source/<package>` 标签中，审查链接使用整合仓库内的同一 source SHA；来源清单仍记录原 URL 作为历史来源事实。当前独立包只从整合仓库 Release 或构建后的 package 目录安装。
 
 ## 本轮最终结果
 

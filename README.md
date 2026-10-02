@@ -13,7 +13,7 @@
 
 </div>
 
-将 `dsh-subs-hub`、`dsh-antigravity-boost`、`dsh-grok-memory`、`dsh-autocompact`、`dsh-usage-board` 和 `dsh-xuediner-gateway` 整合在同一个 workspace。每个插件都保留自己的入口、配置、许可证和独立安装包，先完成兼容修复与针对性测试，再打包发布。原有六个仓库将在整合发布验证通过后删除；准确的来源提交保存在本仓库的 `source/<package>` 标签中。
+将 `dsh-subs-hub`、`dsh-antigravity-boost`、`dsh-grok-memory`、`dsh-autocompact`、`dsh-usage-board` 和 `dsh-xuediner-gateway` 整合在同一个 workspace。每个插件都保留自己的入口、配置、许可证和独立安装包，先完成兼容修复与针对性测试，再打包发布。原有六个仓库已按所有者要求于 2026-10-02 删除，整合发布已验证通过；准确的来源提交保存在本仓库的 `source/<package>` 标签中。
 
 **本仓库不包含 Xueness。** 对照的 DSH 版本为 `0.2.0-rc.2`，上游与原插件的准确 commit 见 [来源清单](docs/source-provenance.json)。不替换 DSH 内核，也不自动把六个插件全部启用。
 
